@@ -30,8 +30,7 @@ def page_summary_body():
         f"**2.** The client is interested in predicting the house sale price from "
         f"her four inherited houses and any other house in Ames, Iowa. ")
 
-    # Link to README file, so the users can have access to
-    # full project documentation
+    # Link to README file, so the users can have access to full project documentation
     st.write(
         f"* For additional information, please visit and **read** the "
         f"[Project README file](https://https://github.com/robinozer/housing).")
