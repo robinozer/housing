@@ -1,8 +1,7 @@
 import plotly.express as px
 import numpy as np
-from sklearn.preprocessing import KBinsDiscretizer
-from feature_engine.discretisation import ArbitraryDiscretiser
 import streamlit as st
+from sklearn.preprocessing import KBinsDiscretizer
 from src.data_management import load_cleaned_housing_data
 
 import matplotlib.pyplot as plt
@@ -119,3 +118,4 @@ def parallel_plot(df_eda):
     df_parallel['SalePrice'] = df_eda['SalePrice']
     fig = px.parallel_categories(df_parallel, color='SalePrice', color_continuous_scale='edge')
     st.plotly_chart(fig)
+    
