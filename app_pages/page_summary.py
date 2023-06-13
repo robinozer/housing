@@ -10,7 +10,7 @@ def page_summary_body():
         f" house prices in in Ames, Iowa.\n" 
         f" The main goals of the app are to allow users to explore\n"
         f" the correlation between various house attributes and sale prices,\n"
-        f" as well as to provide accurate predictions for house sale prices.\n"
+        f" as well as to provide accurate predictions for house sale prices based on a selected few variables.\n"
          )
 
     st.info(
