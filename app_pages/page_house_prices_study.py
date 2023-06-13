@@ -58,10 +58,19 @@ def page_house_prices_study_body():
 
     # Individual plots per variable
     if st.checkbox("Sale Price per Variable"):
+        st.write(
+            f"* Here you can see the distribution of each chosen variable against the target Sale Price."
+        )
         sale_price_per_variable(df_eda)
 
     # Parallel plot
     if st.checkbox("Parallel Plot"):
+        st.write(
+            f"* Since the variables are all numerical (the target Sale Price being continuous numerical), "
+            f"the plot has categorized the values as shown below. "
+            f"* Hover over the variable categories in order to visualize how the 6 variables are connected."
+            f"* The color map indicates price range."
+        )
         parallel_plot(df_eda)
 
 
