@@ -22,19 +22,45 @@ def page_predict_house_price_body():
     # this is the inherited houses (cleaned to have matching data types with the main dataset)
     inherited_df = pd.read_csv(
         "outputs/datasets/cleaned/inherited_houses_cleaned.csv")
-    
 
+	# predict prices of inherited houses with ML pipeline from 05-Regression pipeline notebook	
+    st.write("### House sale prices from client's inherited houses")
+	st.info(f"* The table below shows the four inherited houses profile")
+	st.write(inherited_df.head())
+	inherited_df = inherited_df.filter(best_features)
+	house_price_prediction = pipeline.predict(inherited_df).round(0)
+	inherited_df['Predicted House Sale Price'] = house_price_prediction
+	st.write(
+        f"* The table below shows the predicted sale prices for the four houses, together with the house features used in the prediction, "
+		"which are the two most important variables we saw in the House Price Study page: 'Overall Quality' and 'Above Ground Living "
+		"Area Square Feet'."
+	)
+	st.write(inherited_df.head())
 
-    st.write("### Predict sale prices on inherited houses")
-    st.info( #text borrowed from project description handbook
-        f"* The client is interested in predicting the house sales price"
-        f" from her four inherited houses, and any other house in Ames, Iowa."
-    )
-    st.write("---")
+	# calculate sum of inherited houses predicted prices
+	sum = inherited_df['Predicted House Sale Price'].sum()
+	st.write(
+        f"* The sum of the predicted sale prices for the four houses is: &nbsp; &nbsp; &nbsp;{sum}  \n"
+	)
 
+	st.write("---")
 
-
-
+	# predict price of any other house in Ames, Iowa
+	st.write("### Predict house sale prices in Ames, Iowa  \n")
+	st.write("* The following 4 variables 'Overall Quality',  "
+	"are needed for the ML model to predict the price.")
+	st.warning("* The model has limitations: For example the maximum 'Above Ground Living Area Square Feet'"
+	" in the train set is 5642 square feet and one should not expect the model to generalize to "
+	"larger areas.")
+	# create input fields for live data
+	X_live = DrawInputsWidgets()
+	# predict on live data
+	if st.button("Run Predictive Analysis"):
+		house_price_prediction = pipeline.predict(X_live.filter(best_features)).round(0)
+		st.write(
+			f"* The predicted sale price for the house is: &nbsp; &nbsp; &nbsp;{house_price_prediction[0]}  \n"
+		)
+			
 
 def DrawInputsWidgets():
 

@@ -125,6 +125,6 @@ def parallel_plot(df_eda):
     for column in df_parallel.columns:
         df_parallel[column] = df_parallel[column].replace(labels_map)
     df_parallel['SalePrice'] = df_eda['SalePrice']
-    fig = px.parallel_categories(df_parallel, color='SalePrice', color_continuous_scale='edge')
+    fig = px.parallel_categories(df_parallel, color='SalePrice', color_continuous_scale='edge', width=750, height=500)
     st.plotly_chart(fig)
     
