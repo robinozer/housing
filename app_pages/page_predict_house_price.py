@@ -42,17 +42,17 @@ def DrawInputsWidgets():
 	percentageMin, percentageMax = 0.5, 1.0
 
     # we create input widgets for 4 features	
-	col1, col2, = st.columns(2)
+	col1, col2, col3, col4 = st.beta_columns(4)
 
 	# We are using these features to feed the ML pipeline
 		
  	# create an empty DataFrame, which will be the live data
-	X_live = pd.DataFrame([], index=[0]) 
+	X_live = pd.DataFrame([], index=[0])
 	
 	# from here on we draw the widget based on the variable type (numerical or categorical)
 	# and set initial values
 	with col1:
-		feature = 'GrLivArea'
+		feature = 'OverallQual'
 		st_widget = st.number_input(
 	 		label= feature,
 			min_value= df[feature].min()*percentageMin,
@@ -61,14 +61,35 @@ def DrawInputsWidgets():
 			)
 	X_live[feature] = st_widget
 
-
 	with col2:
-		feature = "OverallQual"
-		st_widget = st.selectbox(
-			label= feature,
-			options= df[feature].sort_values(ascending=True).unique()
+		feature = 'TotalBsmtSF'
+		st_widget = st.number_input(
+	 		label= feature,
+			min_value= df[feature].min()*percentageMin,
+			max_value= df[feature].max()*percentageMax,
+			value= df[feature].median()
 			)
 	X_live[feature] = st_widget
+
+	with col3:
+		feature = '2ndFlrSF'
+		st_widget = st.number_input(
+	 		label= feature,
+			min_value= df[feature].min()*percentageMin,
+			max_value= df[feature].max()*percentageMax,
+			value= df[feature].median()
+			)
+	X_live[feature] = st_widget
+    
+	with col4:
+		feature = 'GarageArea'
+		st_widget = st.number_input(
+	 		label= feature,
+			min_value= df[feature].min()*percentageMin,
+			max_value= df[feature].max()*percentageMax,
+			value= df[feature].median()
+			)
+	X_live[feature] = st_widget  
 
 	return X_live
     

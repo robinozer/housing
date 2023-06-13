@@ -15,10 +15,15 @@ def page_summary_body():
 
     st.info(
         f"The dataset used in this project contains nearly 1.5 thousand rows "
-        f"and represents housing records from Ames, Iowa. It includes"
-        f"information on various house attributes such as floor area, basement,"
-        f"garage, kitchen and year built."
+        f"and represents housing records from Ames, Iowa. It includes "
+        f"information on various house attributes such as floor area, basement, "
+        f"garage, kitchen and year built. "
         f"The dataset covers houses built between 1872 and 2010.")
+
+    # Link to README file, so the users can have access to full project documentation
+    st.write(
+        f"* For additional information, please visit and **read** the "
+        f"[Project README file](https://github.com/robinozer/housing).")
 
     # copied from README file - "Business Requirements" section
     st.success(
@@ -30,7 +35,3 @@ def page_summary_body():
         f"**2.** The client is interested in predicting the house sale price from "
         f"her four inherited houses and any other house in Ames, Iowa. ")
 
-    # Link to README file, so the users can have access to full project documentation
-    st.write(
-        f"* For additional information, please visit and **read** the "
-        f"[Project README file](https://https://github.com/robinozer/housing).")
