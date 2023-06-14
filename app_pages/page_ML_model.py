@@ -8,7 +8,7 @@ from src.evaluate_rgr import regression_performance, regression_evaluation, regr
 def page_ML_model_body():
 
     # load house price pipeline files
-    version = 'v2'
+    version = 'v3'
     pipeline = load_pkl_file(f"outputs/ml_pipeline/predict_housing/{version}/best_regressor_pipeline.pkl")
     feat_importance = plt.imread(f"outputs//ml_pipeline/predict_housing/{version}/features_importance.png")
     X_train = pd.read_csv(f"outputs//ml_pipeline/predict_housing/{version}/X_train.csv")
