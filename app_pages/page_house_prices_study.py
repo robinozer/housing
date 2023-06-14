@@ -26,7 +26,7 @@ def page_house_prices_study_body():
         f" Therefore, the client expects data visualizations of the correlated variables against the sale price to show that.")
 
     # inspect data
-    if st.checkbox("Inspect Customer Base"):
+    if st.checkbox("Inspect House Records"):
         st.write(
             f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns, "
             f"find below the first 10 rows.")

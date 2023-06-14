@@ -88,20 +88,20 @@ In conclusion, after OverallQual, the four variables with highest correlation to
 
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
-* -Business Requirement 1: Correlation Study and Data Visualization
+### Business Requirement 1: Correlation Study and Data Visualization
 As a client, I want to gain insights into the factors influencing the sale price of houses. To fulfill this requirement, the following user stories have been addressed:
 - As a client, I want to visually explore the house records data to identify important variables that impact the sale price.
 - As a client, I want to read an analysis to understand the strength of the relationships between variables and the sale price.
 - As a client, I want to visualize the correlation between key variables and the sale price through interactive plots, enabling a better understanding of their impact.
 
-* -Business Requirement 2: Predict House Prices in Ames, Iowa
+### Business Requirement 2: Predict House Prices in Ames, Iowa
 As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill this requirement, the following user stories have been addressed:
 - As a client, I want to access and analyze the records of inherited houses to gather information about house attributes.
 - As a client, I want to use a machine learning model to predict the prices of my four inherited houses in Ames, Iowa, leveraging key variables for accurate predictions.
 - As a client, I want to utilize the same machine learning model to predict the price of any other house in Ames, Iowa, by providing relevant variables and obtaining an estimated sale price.
 
 ## ML Business Case
-* To address the client's requirements and achieve the desired outcomes, the ML business case is structured as follows:
+### To address the client's requirements and achieve the desired outcomes, the ML business case is structured as follows:
   1. Business Requirements:
    - The client aims to understand the correlation between house attributes and sale prices. This involves visualizing the correlated variables in relation to the sale price.
     - The client wants to predict the sale prices for their four inherited houses as well as for any other house in Ames, Iowa.
@@ -130,13 +130,31 @@ As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill
     - The client will benefit by maximizing the sales price for their inherited properties through accurate predictions and a comprehensive understanding of the key variables influencing house prices.
 
 ## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
-
-
+- **Quick Project Summary Page**:
+    - Provides a brief overview of the project, including a summary of the dataset.
+    - Includes a link to this readme file for reference.
+    - States the business requirements for the project. 
+- **House Prices Study Page**:
+    - The first project requirement is highlighted in an information box.
+    - The middle section summarizes the correlation study and states its conclusions
+    - The page includes three checkboxes that implement the user stories related to the first project requirement:
+        - The first displays a table showing a sample of the dataset.
+        - The second shows scatterplots of correlated variables against sale price.
+        - The third is a parallell plot to visualize how the 6 variables are connected, color coded in sale price.
+- **Project Hypothesis Page**:
+    - States the project hypothesis and presents its validation.
+    - Explains additional insights that can be investigated further.
+- **House Prices Predictor Page**:
+    - This page addresses the second project requirement.
+    - Includes four input widgets and a button that enables users to predict the sale price based on the provided inputs.
+- **ML Model Page**:
+    - Begins with a general conclusion about the performance of the ML model.
+    - Presents an overview of the pipeline steps used in the model.
+    - Includes a bar plot showing the importance of each feature in the training set.
+    - Evaluates the ML model by computing the R2 score and three different error measures.
 
 ## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+* No bugs were left unfixed.
 
 ## Deployment
 ### Heroku
