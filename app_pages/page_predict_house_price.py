@@ -2,13 +2,12 @@ import streamlit as st
 import pandas as pd
 import joblib
 from src.data_management import load_cleaned_housing_data, load_pkl_file
-from src.converters import ConvertToInt64
 
 
 def page_predict_house_price_body():
     st.write("### House Price Predictor")
     # Load the pipeline directly using joblib.load
-    version = "v2"
+    version = "v3"
     pipeline = joblib.load(f"outputs/ml_pipeline/predict_housing/{version}/best_regressor_pipeline.pkl")
     best_features = pd.read_csv(f"outputs/ml_pipeline/predict_housing/{version}/X_train.csv").columns.to_list()
     
