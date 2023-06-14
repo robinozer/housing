@@ -135,8 +135,8 @@ As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill
     - Includes a link to this readme file for reference.
     - States the business requirements for the project. 
 - **House Prices Study Page**:
-    - The first project requirement is highlighted in an information box.
-    - The middle section summarizes the correlation study and states its conclusions
+    - This page fulfills the first project requirement, which is highlighted in an information box.
+    - The middle section summarizes the correlation study and states its conclusions.
     - The page includes three checkboxes that implement the user stories related to the first project requirement:
         - The first displays a table showing a sample of the dataset.
         - The second shows scatterplots of correlated variables against sale price.
@@ -163,35 +163,42 @@ As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 * The project was deployed to Heroku using the following steps.
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+1. Set the runtime.txt Python version to python-3.8.12.
+2. Create a Heroku Procfile with instructions on runtime.
+3. Use Streamlit configuration settings to create a setup.sh file.
+4. Create requirements.txt with the libraries and versions used in the project.
+5. Log in to Heroku and create an App
+6. At the Deploy tab, select GitHub as the deployment method.
+7. Select your repository name and click Search. Once it is found, click Connect.
+8. Select the branch you want to deploy, then click Deploy Branch.
+9. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 
 ## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+numpy==1.18.5
+pandas==1.4.2
+matplotlib==3.3.1
+seaborn==0.11.0
+pandas-profiling==3.1.0
+plotly==4.12.0
+ppscore==1.2.0
 
+streamlit==0.85.0
+
+feature-engine==1.0.2
+imbalanced-learn==0.8.0
+scikit-learn==0.24.2
+xgboost==1.2.1
+yellowbrick==1.3
+Jinja2==3.1.1
+MarkupSafe==2.0.1
+protobuf==3.20
+ipywidgets==8.0.2
+lightgbm==3.3.5
 
 ## Credits 
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+* A number of code cells were either borrowed or adapted from the Walkthrough project 'Churnometer' by Code Institute.
 
 ### Content 
 
 - The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open Source site
-- The images used for the gallery page were taken from this other open-source site
-
-
-
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
-
