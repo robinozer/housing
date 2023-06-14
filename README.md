@@ -88,12 +88,20 @@ In conclusion, after OverallQual, the four variables with highest correlation to
 
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
-* Business Requirement 1: Correlation Study and Data Visualization
+* -Business Requirement 1: Correlation Study and Data Visualization
+As a client, I want to gain insights into the factors influencing the sale price of houses. To fulfill this requirement, the following user stories have been addressed:
+- As a client, I want to visually explore the house records data to identify important variables that impact the sale price.
+- As a client, I want to read an analysis to understand the strength of the relationships between variables and the sale price.
+- As a client, I want to visualize the correlation between key variables and the sale price through interactive plots, enabling a better understanding of their impact.
 
-- As a client, I want to visualize the relationship between important variables and the sale price through plots, allowing me to understand the correlation.
+* -Business Requirement 2: Predict House Prices in Ames, Iowa
+As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill this requirement, the following user stories have been addressed:
+- As a client, I want to access and analyze the records of inherited houses to gather information about house attributes.
+- As a client, I want to use a machine learning model to predict the prices of my four inherited houses in Ames, Iowa, leveraging key variables for accurate predictions.
+- As a client, I want to utilize the same machine learning model to predict the price of any other house in Ames, Iowa, by providing relevant variables and obtaining an estimated sale price.
 
 ## ML Business Case
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+* 
 
 
 ## Dashboard Design
