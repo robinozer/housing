@@ -7,7 +7,7 @@ def page_project_hypothesis_body():
 
     # conclusions from "02-EDA" notebook
     st.success(
-        f"* We suspect that the area of a house (the size in SF) would be a significant predictor of its price."
+        f"* We suspect that the area of a house (the size in SF) would be correlated to its price."
         f" The correlation study in House Prices Study supports this, as 4 out of 6"
         f" of the variables with highest correlation to the target were related to the square feet of a house. \n\n"
         f"* The House Prices Study further showed that the overall quality of a house as well as "

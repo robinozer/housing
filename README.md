@@ -1,42 +1,3 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Codeanywhere Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Gitpod Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Gitpod Template Instructions at least once, though! It contains some important information about Gitpod and the extensions we use. 
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. Log into <a href="https://app.codeanywhere.com/" target="_blank" rel="noreferrer">CodeAnywhere</a> with your GitHub account.
-
-1. On your Dashboard, click on the New Workspace button
-
-1. Paste in the URL you copied from GitHub earlier
-
-1. Click Create
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and <code>pip3 install -r requirements.txt</code>
-
-1. In the terminal type <code>pip3 install jupyter</code>
-
-1. In the terminal type <code>jupyter notebook --NotebookApp.token='' --NotebookApp.password=''</code> to start the jupyter server.
-
-1. Open port 8888 preview or browser
-
-1. Open the jupyter_notebooks directory in the jupyter webpage that has opened and click on the notebook you want to open.
-
-1. Click the button Not Trusted and choose Trust.
-
-Note that the kernel says Python 3. It inherits from the workspace so it will be Python-3.8.12 as installed by our template. To confirm this you can use <code>! python --version</code> in a notebook code cell.
-
-
 ## Cloud IDE Reminders
 
 To log into the Heroku toolbelt CLI:
@@ -93,13 +54,43 @@ Although your friend has an excellent understanding of property prices in her ow
 * 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
 
-## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them).
+## Hypothesis and validation
+*  We suspect that the area of a house (the size in SF) would be correlated with its sale price. In order to validate the project hypothesis, we explored the data and conducted a correlation analysis.
+
+Given the output from the correlation analyses (found in notebook 02-EDA), we might describe the correlations as follows:
+
+For Pearson's Correlation (in descending order):
+
+- **OverallQual**: The correlation of 0.79 with SalePrice suggests a very strong positive linear relationship.
+- **GrLivArea, GarageArea, TotalBsmtSF, 1stFlrSF**: These features show strong positive linear relationships with **SalePrice**, with correlation coefficients ranging from around 0.6 to 0.71.
+- **YearBuilt, YearRemodAdd, MasVnrArea, GarageYrBlt**: With correlation coefficients ranging from approximately 0.47 to 0.52, these variables indicate moderate positive linear relationships with **SalePrice**.
+- **BsmtFinSF1**: This shows a weak positive linear relationship with **SalePrice**, with a correlation coefficient of about 0.39.
+
+For Spearman's Correlation:
+
+- **OverallQual**: The correlation of 0.81 with SalePrice suggests a very strong positive monotonic relationship.
+- **GrLivArea, YearBuilt, GarageArea, TotalBsmtSF, 1stFlrSF, YearRemodAdd, GarageYrBlt**: These features have strong positive monotonic relationships with **SalePrice**, with correlation coefficients ranging from around 0.57 to 0.73.
+- **OpenPorchSF, LotArea**: With correlation coefficients of approximately 0.46 and 0.48, these variables indicate moderate positive monotonic relationships with SalePrice.
+
+Fort both methods:
+- **OverallQual** is the variable that has the highest positive correlation with **SalePrice** in both methods. This suggests that as the overall quality of a house increases, so does its sale price.
+
+- **GrLivArea** is the second most correlated variable according to both methods. This indicates that the above ground living area in square feet is a significant predictor of the sale price, with larger living areas commanding higher prices.
+
+- Variables such as **GarageArea, TotalBsmtSF, 1stFlrSF** are also highly positively correlated with **SalePrice**. This means that these features of the house also significantly contribute to its price.
+
+- **YearBuilt** is more correlated when using Spearman's method compared to Pearson's. This might suggest a non-linear relationship between **YearBuilt** and **SalePrice**. It's reasonable to expect that newer houses would sell for more.
+
+- **OpenPorchSF and LotArea** appear in the top 10 for Spearman correlation but not Pearson, suggesting potential non-linear relationships with **SalePrice**.
+
+
+In conclusion, after OverallQual, the four variables with highest correlation to sale price are **GrLivArea, GarageArea, TotalBsmtSF, 1stFlrSF**. They all measure the area of a house in square feet, thereby validating our hypothesis.
 
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+* Business Requirement 1: Correlation Study and Data Visualization
 
+- As a client, I want to visualize the relationship between important variables and the sale price through plots, allowing me to understand the correlation.
 
 ## ML Business Case
 * In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
