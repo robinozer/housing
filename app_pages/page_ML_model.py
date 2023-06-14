@@ -9,16 +9,16 @@ def page_ML_model_body():
 
     # load house price pipeline files
     version = 'v2'
-    pipeline = load_pkl_file(f"outputs/predict_housing/{version}/best_regressor_pipeline.pkl")
-    feat_importance = plt.imread(f"outputs/predict_housing/{version}/features_importance.png")
-    X_train = pd.read_csv(f"outputs/predict_housing/{version}/X_train.csv")
-    X_test = pd.read_csv(f"outputs/predict_housing/{version}/X_test.csv")
-    y_train =  pd.read_csv(f"outputs/predict_housing/{version}/y_train.csv").squeeze()
-    y_test =  pd.read_csv(f"outputs/predict_housing/{version}/y_test.csv").squeeze()
+    pipeline = load_pkl_file(f"outputs/ml_pipeline/predict_housing/{version}/best_regressor_pipeline.pkl")
+    feat_importance = plt.imread(f"outputs//ml_pipeline/predict_housing/{version}/features_importance.png")
+    X_train = pd.read_csv(f"outputs//ml_pipeline/predict_housing/{version}/X_train.csv")
+    X_test = pd.read_csv(f"outputs//ml_pipeline/predict_housing/{version}/X_test.csv")
+    y_train =  pd.read_csv(f"outputs//ml_pipeline/predict_housing/{version}/y_train.csv").squeeze()
+    y_test =  pd.read_csv(f"outputs//ml_pipeline/predict_housing/{version}/y_test.csv").squeeze()
 
  
 
-    st.write("### ML house price pipeline")
+    st.write("### ML pipeline")
 
     # summary of model performance
     st.info(
