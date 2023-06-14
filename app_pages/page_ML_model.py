@@ -16,15 +16,12 @@ def page_ML_model_body():
     y_train =  pd.read_csv(f"outputs//ml_pipeline/predict_housing/{version}/y_train.csv").squeeze()
     y_test =  pd.read_csv(f"outputs//ml_pipeline/predict_housing/{version}/y_test.csv").squeeze()
 
- 
-
     st.write("### ML pipeline")
 
     # summary of model performance
     st.info(
-        f"* We agreed with the client on an R2 score of at least 0.75 on both train and test "
-        f"set.  \n"
-        f"* Our pipeline achieves 0.86 and 0.80 on the train set and test set respectively  \n"    
+        f"* An R2 score of at least 0.8 on both train and test sets was acceptable to the client."
+        f"* This pipeline achieves 0.906 on the train set and and 0.80 on the train set and test set respectively  \n"    
     )
     st.write("---")
 
@@ -47,10 +44,4 @@ def page_ML_model_body():
      
     # Plot predicted versus actual sale price for train and test sets
     st.write("* **Predicted versus actual sale price scatterplot**")
-    st.info("* For prices below $400000, the data points follow the red line where the predicted price"
-    " equals actual price.  \n"
-    "* For higher prices, our model may not accurately predict prices. "
-    "On the scatterplot showing the predictions on the train set (left plot below), "
-    "the prices above $400000 are underestimated (the data points are below the red line)"
-    )
     regression_evaluation_plots(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, pipeline=pipeline, alpha_scatter=0.5)

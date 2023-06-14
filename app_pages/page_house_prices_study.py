@@ -12,6 +12,7 @@ sns.set_style("whitegrid")
 def page_house_prices_study_body():
 
     # load data
+    # this is cleaned data as I do my data cleaning before EDA in my workflow
     df = load_cleaned_housing_data()
 
     # hard copied from EDA notebook

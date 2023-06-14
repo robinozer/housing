@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-from converters import ConvertToInt64
+from src.converters import ConvertToInt64
 
 
 @st.cache(suppress_st_warning=True, allow_output_mutation=True)
@@ -21,4 +21,4 @@ def load_cleaned_inherited_houses_data():
     return df
 
 def load_pkl_file(file_path):
-    return joblib.load(file_path)
+    return joblib.load(filename=file_path)
