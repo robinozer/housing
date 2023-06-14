@@ -1,14 +1,7 @@
-## Cloud IDE Reminders
+# House Price Predictor
+This is a ML app for visualizing and predicting house prices in in Ames, Iowa. The main goals of the app are to allow users to explore the correlation between various house attributes and sale prices, as well as to provide accurate predictions for house sale prices based on a selected few variables.
 
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## PLACE A LINK TO THE APP HERE
 
 ## Dataset Content
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
@@ -40,9 +33,6 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 |YearBuilt|Original construction date|1872 - 2010|
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
-
-
-
 
 
 ## Business Requirements
