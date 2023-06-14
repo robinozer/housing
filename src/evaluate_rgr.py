@@ -14,14 +14,32 @@ def regression_performance(X_train, y_train, X_test, y_test, pipeline):
     regression_evaluation(X_test, y_test, pipeline)
 
 
-def regression_evaluation(X, y, pipeline):
+"""def regression_evaluation(X, y, pipeline):
     prediction = pipeline.predict(X)
     print('R2 Score:', r2_score(y, prediction).round(3))
     print('Mean Absolute Error:', mean_absolute_error(y, prediction).round(3))
     print('Mean Squared Error:', mean_squared_error(y, prediction).round(3))
     print('Root Mean Squared Error:', np.sqrt(
         mean_squared_error(y, prediction)).round(3))
-    print("\n")
+    print("\n")"""
+
+def regression_evaluation(X, y, pipeline):
+    prediction = pipeline.predict(X)
+    r2 = r2_score(y, prediction).round(3)
+    mae = mean_absolute_error(y, prediction).round(3)
+    mse = mean_squared_error(y, prediction).round(3)
+    rmse = np.sqrt(mean_squared_error(y, prediction)).round(3)
+
+    evaluation_df = pd.DataFrame(
+        {
+            "R2 Score": [r2],
+            "Mean Absolute Error": [mae],
+            "Mean Squared Error": [mse],
+            "Root Mean Squared Error": [rmse],
+        }
+    )
+
+    return evaluation_df
 
 
 def regression_evaluation_plots(X_train, y_train, X_test, y_test, pipeline, alpha_scatter=0.5):
