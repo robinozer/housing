@@ -1,22 +1,22 @@
 import streamlit as st
 import pandas as pd
 import joblib
-from src.data_management import load_cleaned_housing_data, load_pkl_file
+from src.data_management import load_cleaned_housing_data
 from src.converters import ConvertToInt64
 
 
 def page_predict_house_price_body():
-    st.write("### House Price Predictor")
+
     # Load the pipeline directly using joblib.load
     version = "v2"
     pipeline = joblib.load(f"outputs/ml_pipeline/predict_housing/{version}/best_regressor_pipeline.pkl")
     best_features = pd.read_csv(f"outputs/ml_pipeline/predict_housing/{version}/X_train.csv").columns.to_list()
-    
+
 
     # this is the inherited houses (cleaned to have matching data types with the main dataset)
     inherited_df = pd.read_csv("outputs/datasets/cleaned/inherited_houses_cleaned.csv")
 
-    # predict prices of inherited houses with ML pipeline from 05-Regression Pipeline notebook
+    # predict prices of inherited houses with ML pipeline from 05-Regression pipeline notebook
     st.write("### House sale prices from client's inherited houses")
     st.info("* The table below shows the four inherited houses profile")
 
@@ -35,7 +35,7 @@ def page_predict_house_price_body():
     # calculate sum of inherited houses predicted prices
     sum_prices = inherited_df['Predicted House Sale Price'].sum()
     st.write(
-        f"* The sum of the predicted sale prices for the four houses is: {sum_prices}\n"
+        "* The sum of the predicted sale prices for the four houses is: {sum_prices}\n"
     )
 
     st.write("---")
@@ -109,4 +109,3 @@ def DrawInputsWidgets():
         X_live[feature] = st_widget
 
     return X_live
-
