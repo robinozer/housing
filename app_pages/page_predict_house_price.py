@@ -50,7 +50,7 @@ def page_predict_house_price_body():
     if st.button("Run Predictive Analysis"):
         house_price_prediction = pipeline.predict(X_live.filter(best_features)).round(0)
         st.write(
-            f"* The predicted sale price for the house is: {house_price_prediction[0]}\n"
+            f"* The predicted sale price for the house is (in USD): {house_price_prediction[0]}\n"
         )
 
 
