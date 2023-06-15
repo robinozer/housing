@@ -94,30 +94,30 @@ As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill
 ### To address the client's requirements and achieve the desired outcomes, the ML business case is structured as follows:
   1. **Business Requirements**:
      - The client aims to understand the correlation between house attributes and sale prices. This involves visualizing the correlated variables in relation to the sale price.
-    - The client wants to predict the sale prices for their four inherited houses as well as for any other house in Ames, Iowa.
-  1. **Is there a business requirement that can be answered with conventional data analysis?**
-    * Conventional data analysis is used to explore the correlation between house attributes and sale prices.
-  2. **Dashboard or API Endpoint:**
-    * The client specifically requires a dashboard to visualize the insights and predictions.
-  3. **Successful Project Outcome for the Client:**
-    * The client considers the project successful if it provides a comprehensive study showcasing the most relevant variables correlated with sale prices.
-    * Additionally, the ability to accurately predict the sale prices for the client's four inherited houses and other houses in Ames, Iowa is crucial.
-  4. **Epics and User Stories:**
-    * Data collection and cleaning.
-    * Data visualization and preparation.
-    * Model training, optimization and validation.
-    * Dashboard planning, designing, and development.
-    * Dashboard deployment and release.
-  5. **Ethical or Privacy Concerns:**
-    * No ethical or privacy concerns are identified since the client is utilizing a publicly available dataset.
-  6. **Suggested Model:**
-    * Based on the data, a regression model is suggested, where sale price is the target variable.
-  7. **Model Inputs and Intended Outputs:**
-    * The model will take house attribute information as inputs (specifically our 4 best variables) and provide the predicted sale price as the output.
-  8. **Performance Goal Criteria:**
-    * The agreed-upon performance goal for the predictions is an R2 score of at least 0.8 on both the train and test sets.
-  9.  **Client Benefits:**
-    * The client will benefit by maximizing the sales price for their inherited properties through accurate predictions and a comprehensive understanding of the key variables influencing house prices.
+     - The client wants to predict the sale prices for their four inherited houses as well as for any other house in Ames, Iowa.
+  2. **Is there a business requirement that can be answered with conventional data analysis?**  
+     - Conventional data analysis is used to explore the correlation between house attributes and sale prices.
+  3. **Dashboard or API Endpoint:**
+     - The client specifically requires a dashboard to visualize the insights and predictions.
+  4. **Successful Project Outcome for the Client:**
+     - The client considers the project successful if it provides a comprehensive study showcasing the most relevant variables correlated with sale prices
+     - Additionally, the ability to accurately predict the sale prices for the client's four inherited houses and other houses in Ames, Iowa is crucial.
+  5. **Epics and User Stories:**
+     - Data collection and cleaning.
+     - Data visualization and preparation.
+     - Model training, optimization and validation.
+     - Dashboard planning, designing, and development.
+     - Dashboard deployment and release.
+  6. **Ethical or Privacy Concerns:**
+     - No ethical or privacy concerns are identified since the client is utilizing a publicly available dataset.
+  7. **Suggested Model:**
+     - Based on the data, a regression model is suggested, where sale price is the target variable.
+  8. **Model Inputs and Intended Outputs:**
+     - The model will take house attribute information as inputs (specifically our 4 best variables) and provide the predicted sale price as the output.
+  9. **Performance Goal Criteria:**
+     - The agreed-upon performance goal for the predictions is an R2 score of at least 0.8 on both the train and test sets.
+  10.  **Client Benefits:**
+     - The client will benefit by maximizing the sales price for their inherited properties through accurate predictions and a comprehensive understanding of the key variables influencing house prices.
 
 ## Dashboard Design
 - **Quick Project Summary Page**:
