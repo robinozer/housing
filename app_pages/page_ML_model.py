@@ -54,6 +54,9 @@ def page_ML_model_body():
     # Plot predicted versus actual sale price for train and test sets
     st.write("* **Predicted versus actual sale price scatterplot**")
     st.write("* As we can see the dots generally match the red line. \n"
-            "In the test set we can see dots straying from the line for houses with higher prices."
+            " The blue dots indicate the actual value and its predicted value provided"
+            " by the ML pipeline for a given datapoint. The red line indicates where"
+            " the predicted value is the actual value."
+            " In the test set we can see dots straying from the line for houses with higher prices."
             " This can be because the model is not as good at accurately predicting the most expensive houses.")
     regression_evaluation_plots(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, pipeline=pipeline, alpha_scatter=0.5)
