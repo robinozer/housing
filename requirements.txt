@@ -18,3 +18,4 @@ MarkupSafe==2.0.1
 protobuf==3.20
 ipywidgets==8.0.2
 lightgbm==3.3.5
+altair==4.1.0
