@@ -29,8 +29,8 @@ def page_ML_model_body():
     st.write("---")
 
     # show best features and their importance for the ML model
-    st.write("* **These are the best features the model was trained on. The plt shows their importance**")
-    st.info("As we can see, the most important variable for predicting the sale price is 'OverallQual'")
+    st.write("* **These are the best features the model was trained on. The plot demonstrates their importance**")
+    st.info("Together, these variables predict sale price in our model.")
     st.write(X_train.columns.to_list())
     st.image(feat_importance)
     st.write("---")
@@ -38,8 +38,6 @@ def page_ML_model_body():
     # evaluate performance on train and test sets
     train_evaluation = regression_evaluation(X_train, y_train, pipeline)
     test_evaluation = regression_evaluation(X_test, y_test, pipeline)
-
-    st.write("---")
 
     # display evaluation table for train set
     st.write("* **Evaluation Metrics for Train Set**")
@@ -55,4 +53,7 @@ def page_ML_model_body():
 
     # Plot predicted versus actual sale price for train and test sets
     st.write("* **Predicted versus actual sale price scatterplot**")
+    st.write("* As we can see the dots generally match the red line. \n"
+            "In the test set we can see dots straying from the line for houses with higher prices."
+            " This can be because the model is not as good at accurately predicting the most expensive houses.")
     regression_evaluation_plots(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, pipeline=pipeline, alpha_scatter=0.5)
