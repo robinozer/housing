@@ -1,7 +1,7 @@
 # House Price Predictor
 This is a ML app for visualizing and predicting house prices in in Ames, Iowa. The main goals of the app are to allow users to explore the correlation between various house attributes and sale prices, as well as to provide accurate predictions for house sale prices based on a selected few variables.
 
-## PLACE A LINK TO THE APP HERE
+## [Live Project](https://housing-13c490210f47.herokuapp.com/)
 
 ## Dataset Content
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
@@ -149,7 +149,7 @@ As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill
 ## Deployment
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
+* The App live link is: https://housing-13c490210f47.herokuapp.com/ 
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 * The project was deployed to Heroku using the following steps.
 
@@ -182,6 +182,7 @@ As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill
 - protobuf==3.20
 - ipywidgets==8.0.2
 - lightgbm==3.3.5
+- altair==4.1.0
 
 ## Credits 
 
