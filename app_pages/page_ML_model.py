@@ -6,7 +6,7 @@ from src.evaluate_rgr import regression_performance, regression_evaluation, regr
 
 
 def page_ML_model_body():
-    # load house price pipeline files
+    # load house price pipeline files (v3)
     version = 'v3'
     pipeline = load_pkl_file(f"outputs/ml_pipeline/predict_housing/{version}/best_regressor_pipeline.pkl")
     feat_importance = plt.imread(f"outputs//ml_pipeline/predict_housing/{version}/features_importance.png")
@@ -16,22 +16,21 @@ def page_ML_model_body():
     y_test = pd.read_csv(f"outputs//ml_pipeline/predict_housing/{version}/y_test.csv").squeeze()
 
     st.write("### ML pipeline")
-
     # summary of model performance
     st.info(
-        f"* An R2 score of at least 0.8 on both train and test sets was acceptable to the client."
-        f"* This pipeline achieves 0.906 on the train set and and 0.832 on the test set.  \n"    
+        f"* An R2 score of at least 0.8 on both train and test sets was acceptable to the client. \n"
+        f"* This pipeline achieves 0.906 on the train set and and 0.832 on the test set, as seen below."    
     )
     st.write("---")
 
     # show pipeline steps
-    st.write("* **ML pipeline to predict house sale price**")
+    st.write("* **This is the whole ML pipeline to predict house sale price**")
     st.write(pipeline)
     st.write("---")
 
     # show best features and their importance for the ML model
-    st.write("* **The features the model was trained on and their importance**")
-    st.info("We see that the most important variable for predicting the sale price is 'OverallQual'")
+    st.write("* **These are the best features the model was trained on. The plt shows their importance**")
+    st.info("As we can see, the most important variable for predicting the sale price is 'OverallQual'")
     st.write(X_train.columns.to_list())
     st.image(feat_importance)
     st.write("---")

@@ -12,21 +12,21 @@ def page_predict_house_price_body():
     best_features = pd.read_csv(f"outputs/ml_pipeline/predict_housing/{version}/X_train.csv").columns.to_list()
     
 
-    # this is the inherited houses (cleaned to have matching data types with the main dataset)
+    # this are the inherited houses
     inherited_df = pd.read_csv("outputs/datasets/cleaned/inherited_houses_cleaned.csv")
 
     # predict prices of inherited houses with ML pipeline from 05-Regression Pipeline notebook
-    st.write("### House sale prices from client's inherited houses")
-    st.info("* The table below shows the four inherited houses profile")
+    st.write("### Sale prices for the client's 4 inherited houses")
+    st.info("* The table below displays the profile of the four inherited houses")
 
     st.write(inherited_df.head())
     inherited_df = inherited_df.filter(best_features)
     house_price_prediction = pipeline.predict(inherited_df).round(0)
     inherited_df['Predicted House Sale Price'] = house_price_prediction
-    st.write(
-        "* The table below shows the predicted sale prices for the "
-        "four houses, together with the house features used in the prediction, "
-        "which are the four most important variables we saw in the House Price Study page: "
+    st.info(
+        "* The table below displays predicted sale prices for each of the "
+        "four inherited houses, along with the features that were used in the prediction.\n "
+        "* These were the four most important features that the model was trained on: "
         "'OverallQuality', 'TotalBsmtSF', '2ndFlrSF', and 'GarageArea'."
     )
     st.write(inherited_df.head())
@@ -34,15 +34,16 @@ def page_predict_house_price_body():
     # calculate sum of inherited houses predicted prices
     sum_prices = inherited_df['Predicted House Sale Price'].sum()
     st.write(
-        f"* The sum of the predicted sale prices for the four houses is: {sum_prices}\n"
+        f"* In total, the predicted sale price for all of the four houses is: {sum_prices}\n"
     )
 
     st.write("---")
 
     # predict price of any other house in Ames, Iowa
-    st.write("### Predict house sale prices in Ames, Iowa  \n")
-    st.write("* The following 4 variables 'OverallQuality', 'TotalBsmtSF', "
-             "'2ndFlrSF', and 'GarageArea' are needed for the ML model to predict the price.")
+    st.write("### Predict the sale price for any house in Ames, Iowa  \n")
+    st.info("* Please enter the values for the following 4 variables "
+            "for the ML model to predict the price.\n"
+            "Please note there may be some discrepancy between predicted and actual sale price.")
 
     # create input fields for live data
     X_live = DrawInputsWidgets()
