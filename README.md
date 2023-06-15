@@ -108,6 +108,7 @@ As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill
      - Model training, optimization and validation.
      - Dashboard planning, designing, and development.
      - Dashboard deployment and release.
+     - A detailed board with mapped issues and epics can be found in the project board in the [Github Repository](https://github.com/users/robinozer/projects/6):
   6. **Ethical or Privacy Concerns:**
      - No ethical or privacy concerns are identified since the client is utilizing a publicly available dataset.
   7. **Suggested Model:**
