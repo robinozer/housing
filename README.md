@@ -136,12 +136,16 @@ As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill
     - Explains additional insights that can be investigated further.
 - **House Prices Predictor Page**:
     - This page addresses the second project requirement.
-    - Includes four input widgets and a button that enables users to predict the sale price based on the provided inputs.
+    - Displays a table with the inherited houses features.
+    - Displays a table with predicted sale prices for each of these four inherited houses, along with the 4 features used in the prediction.
+    - Gives a total sum of predicted sale price for all four houses.
+    - Includes four input widgets (corresponding to the 4 variables the model was trained on) and a 'Run Predictive Analysis' button that enables users to predict the sale price based on the provided inputs.
 - **ML Model Page**:
     - Begins with a general conclusion about the performance of the ML model.
     - Presents an overview of the pipeline steps used in the model.
     - Includes a bar plot showing the importance of each feature in the training set.
     - Evaluates the ML model by computing the R2 score and three different error measures.
+    - Shows predicted vs. actual sale price scatterplots for train and test sets.
 
 ## Unfixed Bugs
 * No bugs were left unfixed.
@@ -150,7 +154,7 @@ As a client, I want to accurately predict house prices in Ames, Iowa. To fulfill
 ### Heroku
 
 * The App live link is: https://housing-13c490210f47.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
+* Set the Heroku stack to version [Heroku-20].
 * The project was deployed to Heroku using the following steps.
 
 1. Set the runtime.txt Python version to python-3.8.12.
